@@ -43,7 +43,7 @@ echo "checking if any lotus process is using GPU..."
 check_gpu_process $hp_process
 if [ $? == 1 ] ;then
     echo "$time lotus is using GPU, kill any bminer process..."
-    killall -9 bminer
+    killall -9 $lp_process
 else
     echo "not found any lotus GPU process, check if $lp_process running..."
     check_gpu_process $lp_process
